@@ -271,6 +271,16 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
             }
         }
 
+        if (pacman.y == tileSize*9  ){
+            if (pacman.x <0)
+            pacman.x = boardWidth;
+        else if (pacman.x > boardWidth){
+            pacman.x=0;
+        }
+        }
+
+      
+
         Block foodEaten = null;
         for (Block food : foods) {
             if(collision(pacman, food)){
